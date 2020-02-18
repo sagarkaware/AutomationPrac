@@ -50,24 +50,11 @@ public class AccountCreationForm {
 	
 	
 	
-	public void accountCreation() throws IOException  {
+	public void accountCreation()  {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		File file=new File("resource/Book1.xlsx");
-		FileInputStream fis=new FileInputStream(file);
-		
-		XSSFWorkbook xcel= new XSSFWorkbook(fis);
-		
-		XSSFSheet sht =xcel.getSheet("Sheet1");
-		
-		String user=sht.getRow(0).getCell(0).getStringCellValue();
-		
-		String lastname= sht.getRow(0).getCell(1).getStringCellValue();
-
-		System.out.println(user);
-		System.out.println(lastname);
-		
-		xcel.close();
+		UtilitiClass ref = new UtilitiClass();
+		ref.excelData();
 		
 		
 		
