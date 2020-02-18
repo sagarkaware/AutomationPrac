@@ -20,7 +20,6 @@ public class SetUp {
 		System.setProperty("webdriver.chrome.driver", "Resource/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
-		driver.manage().window().maximize();
 	}
 
 	@Test(enabled=false)
