@@ -2,9 +2,7 @@ package com.testing.org;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
-
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
