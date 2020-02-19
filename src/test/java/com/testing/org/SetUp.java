@@ -18,8 +18,16 @@ public class SetUp {
 		System.setProperty("webdriver.chrome.driver", "Resource/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
+
 		driver.manage().window().maximize();
 		System.out.println("Sagar Push");
+		
+		System.out.println("Saurab Code");
+		
+		System.out.println("Saurab Code");
+		
+		System.out.println("Saurab Code");
+
 	}
 
 	@Test(enabled=false)
@@ -28,7 +36,7 @@ public class SetUp {
 		sin.clickSign();
 		sin.createAcc();
 
-		
+		System.out.println("Saurab Code");
 	}
 
 	@Test(enabled=false)
