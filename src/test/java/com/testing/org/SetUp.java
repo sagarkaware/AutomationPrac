@@ -1,7 +1,14 @@
 package com.testing.org;
 
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import junit.framework.Assert;
+
 import org.testng.annotations.BeforeTest;
+
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,15 +25,16 @@ public class SetUp {
 		System.setProperty("webdriver.chrome.driver", "Resource/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
-
 		driver.manage().window().maximize();
-		System.out.println("Sagar Push");
+		//Assert.assertEquals("http://automationpractice.com/index", driver.getCurrentUrl());
 		
-		System.out.println("Saurab Code");
+		//SoftAssert so=new SoftAssert();
+		//so.assertEquals("http://automationpractice.com/.php", driver.getCurrentUrl());
 		
-		System.out.println("Saurab Code");
+		//so.assertAll();
 		
-		System.out.println("Saurab Code");
+	
+		
 
 	}
 

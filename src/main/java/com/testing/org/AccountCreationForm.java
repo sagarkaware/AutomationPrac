@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -15,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class AccountCreationForm {
+public class AccountCreationForm  {
 
 	WebDriver driver;
 
@@ -52,84 +54,88 @@ public class AccountCreationForm {
 	
 	public void accountCreation()  {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
 		UtilitiClass ref = new UtilitiClass();
-		ref.excelData();
-		
+		Map<String, Object> customer = ref.exceldata();
+		System.out.println("sagar"+customer);
+
+	
+
 		
 		
 
 
-	/*	WebElement gender= driver.findElement(gender_locator);
+		WebElement gender= driver.findElement(gender_locator);
 		gender.click();
 
-		WebElement fName= driver.findElement(fName_locator);		
-		fName.sendKeys("Sagar");
+		WebElement fName= driver.findElement(fName_locator);
+		String name=(String) customer.get("FirstName");
+		System.out.println(name);
+		fName.sendKeys((String) customer.get("FirstName"));
 
 
 		WebElement lName= driver.findElement(lName_locator); 		  
-		lName.sendKeys("Kaware");
+		lName.sendKeys((String)customer.get("LastName"));
 
 		WebElement pass =driver.findElement(pass_locator);		 
-		pass.sendKeys("sagar@12345");
+		pass.sendKeys((String)customer.get("Pass"));
 
 		//WebElement days =driver.findElement(By.xpath("//select[@id='days']/option[1]"));		 
 		//pass.sendKeys("");
 
 		Select days = new Select(driver.findElement(days_locator));
-		days.selectByValue("26");
+		days.selectByValue((String)customer.get("Date"));
 
 		Select month = new Select(driver.findElement(months_locator));
-		month.selectByValue("4");
+		month.selectByValue((String)customer.get("Month"));
 
 		Select years = new Select(driver.findElement(years_locator));
-		years.selectByValue("1991");
+		years.selectByValue((String)customer.get("Year"));
 
 		WebElement newsletter =driver.findElement(newsletter_locator);		 
 		newsletter.click();
 
 		WebElement company =driver.findElement(company_locator);		 
-		company.sendKeys("RelyonSoftech");
+		company.sendKeys((String)customer.get("Company"));
 
 		WebElement address1 =driver.findElement(address1_locator);		 
-		address1.sendKeys("Shivne");
+		address1.sendKeys((String)customer.get("Address"));
 
 		WebElement address2 =driver.findElement(address1_locator);		 
-		address2.sendKeys("Pune");
+		address2.sendKeys((String)customer.get("City"));
 
 		WebElement city =driver.findElement(city_locator);		 
-		city.sendKeys("Pune");
+		city.sendKeys((String)customer.get("Location"));
 
 		Select id_state = new Select(driver.findElement(id_state_locator));
-		id_state.selectByValue("4");
+		id_state.selectByValue((String)customer.get("Post"));
 
 
 		WebElement postcode =driver.findElement(postcode_locator);		 
-		postcode.sendKeys("00000");
+		postcode.sendKeys((String)customer.get("Num"));
 
 		Select id_country = new Select(driver.findElement(id_country_locator));
-		id_country.selectByValue("21");
+		id_country.selectByValue((String)customer.get("Test"));
 		//*[@id="other"]
 		WebElement other =driver.findElement(other_locator);		 
-		other.sendKeys("9595507502");
+		other.sendKeys((String)customer.get("Mobile1"));
 
 		WebElement phone =driver.findElement(phone_locator);		 
-		phone.sendKeys("9595507502");
+		phone.sendKeys((String)customer.get("Mobile2"));
 
 		//*[@id="other"]		  
 
 		WebElement phone2 =driver.findElement(phone_mobile_locator);		 
-		phone2.sendKeys("9595507502");
+		phone2.sendKeys((String)customer.get("Mobile3"));
 
 		WebElement alias11 =driver.findElement(alias_locator);	//*[@id="alias"]	 
-		alias11.sendKeys("Pune");
+		alias11.sendKeys((String)customer.get("City"));
 
 		WebElement submitAccount =driver.findElement(submitAccount_locator);	//*[@id="alias"]	 
 		submitAccount.click();
 
 		//Link to database cannot be established: SQLSTATE[HY000] [1203] User automa37_pr595 already has more than 'max_user_connections' active connections
 
-*/
+
 	}
 
 

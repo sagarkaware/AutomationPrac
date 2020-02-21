@@ -94,7 +94,7 @@ public class SignUP {
 
 		WebElement emailId = driver.findElement(userName_locator);
 
-		emailId.sendKeys("sssaggarsagarsagarsagar@gamil.com");
+		emailId.sendKeys("sssaggfdarsagarsagarsagar@gamil.com");
 
 		 WebElement createAcc = driver.findElement(createAcc_locator);
 		 createAcc.click();
